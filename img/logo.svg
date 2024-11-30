@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Circles background -->
+  <circle cx="100" cy="100" r="95" fill="white" stroke="#e0e0e0" stroke-width="2"/>
+  <circle cx="100" cy="100" r="85" fill="white" stroke="#d0d0d0" stroke-width="2"/>
+  <circle cx="100" cy="100" r="75" fill="white" stroke="#c0c0c0" stroke-width="2"/>
+  
+  <!-- City silhouette -->
+  <g transform="translate(50, 40)">
+    <path d="M20 120 L20 80 L40 80 L40 60 L60 60 L60 40 L80 40 L80 20 L100 20 L100 60 L120 60 L120 80 L140 80 L140 120" 
+          fill="#2c3e50"/>
+  </g>
+  
+  <!-- Waves -->
+  <path d="M10 130 C40 120, 60 140, 90 130 C120 120, 140 140, 170 130 C200 120, 220 140, 250 130" 
+        stroke="#3498db" fill="none" stroke-width="8"/>
+  <path d="M10 145 C40 135, 60 155, 90 145 C120 135, 140 155, 170 145 C200 135, 220 155, 250 145" 
+        stroke="#2980b9" fill="none" stroke-width="8"/>
+  
+  <!-- Dots decoration -->
+  <circle cx="50" cy="100" r="3" fill="#95a5a6"/>
+  <circle cx="150" cy="100" r="3" fill="#95a5a6"/>
+</svg>
