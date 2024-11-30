@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Admin Panel</title>
+    
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.5/build/heatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+</head>
+<body>
+    <div class="flex min-h-screen bg-gray-100">
+        <!-- Sidebar -->
+        <aside class="fixed w-64 h-full bg-white shadow-md">
+            <div class="p-8 border-b">
+                <div class="flex items-center gap-6">
+                    <div class="flex-shrink-0">
+                        <img src="img/logo.png" alt="City Sense Logo" class="h-20 w-20 object-contain">
+                    </div>
+                    <span class="text-2xl font-medium tracking-widest">CITY SENSE</span>
+                </div>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2" id="sidebar-menu">
+                    <li>
+                        <button class="menu-item w-full flex items-center gap-3 px-4 py-2 rounded hover:bg-gray-100 active" data-section="upload">
+                            <i class="fas fa-camera"></i>
+                            <span>Caricamento Immagini</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item w-full flex items-center gap-3 px-4 py-2 rounded hover:bg-gray-100" data-section="cameras">
+                            <i class="fas fa-video"></i>
+                            <span>Gestione Telecamere</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item w-full flex items-center gap-3 px-4 py-2 rounded hover:bg-gray-100" data-section="analytics">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="ml-64 flex-1">
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-medium">City Sense Admin Panel</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="img/user-avatar.svg" alt="User Avatar" class="h-8 w-8 p-1 rounded-full bg-gray-100">
+                        <span class="text-sm font-medium">Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="p-6" id="main-content">
+                <!-- Il contenuto verrà caricato dinamicamente da upload.js -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Application Scripts (order matters) -->
+    <script src="js/cameras.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>
