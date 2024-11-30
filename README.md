@@ -1,10 +1,9 @@
 # City Sense Project
 
 ## Overview
-City Sense è un sistema di monitoraggio urbano che utilizza l'intelligenza artificiale per analizzare le immagini delle telecamere pubbliche e generare report sullo stato della città. Il sistema si concentra principalmente sul monitoraggio di:
-- Rifiuti abbandonati
-- Buche stradali
-- Problemi di illuminazione
+City Sense è un sistema di monitoraggio urbano che utilizza l'intelligenza artificiale per analizzare le immagini delle telecamere pubbliche e generare report sullo stato della città. Il sistema si concentra su due aspetti principali:
+- Monitoraggio rifiuti abbandonati
+- Rilevamento buche stradali
 
 ## Funzionalità Principali
 
@@ -23,7 +22,7 @@ City Sense è un sistema di monitoraggio urbano che utilizza l'intelligenza arti
 ### 3. Analytics
 - Dashboard con grafici interattivi
 - Heatmap per la visualizzazione delle concentrazioni di problemi
-- Trend temporali per tipo di segnalazione
+- Trend temporali per tipo di segnalazione (rifiuti e buche)
 - Report dettagliati per quartiere
 - Confronto prestazioni tra zone
 
