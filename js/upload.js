@@ -14,6 +14,26 @@ function generateUploadForm() {
                 </div>
             </div>
 
+            <!-- Nuovo banner informativo -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg shadow-sm">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-info-circle text-blue-500 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-medium text-blue-800 mb-1">Modalità Demo e Debug</h3>
+                        <p class="text-blue-700">
+                            Questa sezione è disponibile solo a scopo dimostrativo e di debug. Ti permette di caricare manualmente 
+                            immagini nel sistema, associandole a una data e una telecamera specifica.
+                        </p>
+                        <p class="text-blue-600 mt-2 text-sm">
+                            <i class="fas fa-lightbulb mr-1"></i>
+                            In produzione, il processo di acquisizione e processamento delle immagini sarà completamente automatizzato.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-100/5 to-slate-100/10"></div>
                 <form id="uploadForm" class="max-w-4xl mx-auto p-8 space-y-8 relative z-10">
