@@ -49,12 +49,12 @@ function generateUploadForm() {
                                         onchange="updateQuartiere()"
                                         required>
                                     <option value="">Seleziona...</option>
-                                    <option value="CAM001">Campo de' fiori</option>
-                                    <option value="CAM002">Via Frattina</option>
-                                    <option value="CAM003">Via del Corso</option>
-                                    <option value="CAM004">Piazza di Spagna</option>
-                                    <option value="CAM011">Trastevere - P.zza S. Maria</option>
-                                    <option value="CAM012">Trastevere - Via Lungaretta</option>
+                                    <option value="Campo de' fiori">Campo de' fiori</option>
+                                    <option value="Via Frattina">Via Frattina</option>
+                                    <option value="Via del Corso">Via del Corso</option>
+                                    <option value="Piazza di Spagna">Piazza di Spagna</option>
+                                    <option value="Trastevere - P.zza S. Maria">Trastevere - P.zza S. Maria</option>
+                                    <option value="Trastevere - Via Lungaretta">Trastevere - Via Lungaretta</option>
                                 </select>
                                 <div class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
                                     <i class="fas fa-chevron-down"></i>
@@ -116,16 +116,6 @@ function generateUploadForm() {
                                 </button>
                             </div>
                         </div>
-
-                        <!-- Barra Progresso -->
-                        <div id="uploadProgress" class="hidden mt-4">
-                            <div class="h-1 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="progress-bar h-full bg-blue-500 transition-all duration-300" style="width: 0%"></div>
-                            </div>
-                            <p class="text-xs text-slate-600 mt-2">
-                                Caricamento: <span class="progress-text">0%</span>
-                            </p>
-                        </div>
                     </div>
 
                     <!-- Pulsante Submit -->
@@ -148,12 +138,12 @@ function updateQuartiere() {
     const quartiere = document.getElementById('quartiere');
     
     const quartieriMap = {
-        'CAM001': 'Centro Storico',
-        'CAM002': 'Centro Storico',
-        'CAM003': 'Centro Storico',
-        'CAM004': 'Centro Storico',
-        'CAM011': 'Trastevere',
-        'CAM012': 'Trastevere'
+        'Campo de\' fiori': 'Centro Storico',
+        'Via Frattina': 'Centro Storico',
+        'Via del Corso': 'Centro Storico',
+        'Piazza di Spagna': 'Centro Storico',
+        'Trastevere - P.zza S. Maria': 'Trastevere',
+        'Trastevere - Via Lungaretta': 'Trastevere'
     };
 
     quartiere.value = telecamera.value ? quartieriMap[telecamera.value] : '';
@@ -447,20 +437,9 @@ function handleShortcuts(e) {
 
 // Aggiorna la funzione di upload per includere la barra di progresso
 function uploadFile(formData) {
-    const progressBar = document.querySelector('.progress-bar');
-    const progressText = document.querySelector('.progress-text');
-    const uploadProgress = document.getElementById('uploadProgress');
-    
-    uploadProgress.classList.remove('hidden');
-    
     return fetch('https://hook.eu2.make.com/f4sumxu9s8cir4rasbpucituzs66mrpi', {
         method: 'POST',
-        body: formData,
-        onUploadProgress: (progressEvent) => {
-            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-            progressBar.style.width = `${percentCompleted}%`;
-            progressText.textContent = `${percentCompleted}%`;
-        }
+        body: formData
     });
 }
 
