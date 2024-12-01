@@ -3,107 +3,93 @@ window.analyticsData = {
     waste: {
         neighborhoods: [
             "Centro Storico",
+            "Trastevere", 
+            "Testaccio",
             "San Lorenzo",
-            "Prati",
-            "Trastevere",
-            "Testaccio"
+            "Prati"
         ],
-        reports: [45, 38, 32, 41, 28]
+        reports: [78, 65, 42, 38, 25] // Centro ha più problemi, Prati meno
     },
     potholes: {
         neighborhoods: [
-            "Centro Storico",
             "San Lorenzo",
-            "Prati",
+            "Testaccio",
             "Trastevere",
-            "Testaccio"
+            "Centro Storico",
+            "Prati"
         ],
-        reports: [35, 42, 28, 37, 31]
+        reports: [82, 61, 45, 33, 28] // San Lorenzo ha più problemi di buche
     },
     criticalAreas: [
-        { neighborhood: "Centro Storico", reports: 156, mainIssue: "Rifiuti" },
-        { neighborhood: "San Lorenzo", reports: 134, mainIssue: "Buche" },
-        { neighborhood: "Prati", reports: 98, mainIssue: "Rifiuti" },
-        { neighborhood: "Trastevere", reports: 87, mainIssue: "Buche" },
-        { neighborhood: "Testaccio", reports: 76, mainIssue: "Rifiuti" }
+        { neighborhood: "Centro Storico", reports: 198, mainIssue: "Rifiuti" },
+        { neighborhood: "San Lorenzo", reports: 176, mainIssue: "Buche" },
+        { neighborhood: "Trastevere", reports: 145, mainIssue: "Rifiuti" },
+        { neighborhood: "Testaccio", reports: 132, mainIssue: "Buche" },
+        { neighborhood: "Prati", reports: 89, mainIssue: "Traffico" }
     ],
     bestAreas: [
-        { neighborhood: "EUR", reports: 12, mainStrength: "Pulizia" },
-        { neighborhood: "Flaminio", reports: 15, mainStrength: "Manutenzione" },
-        { neighborhood: "Monteverde", reports: 18, mainStrength: "Pulizia" },
-        { neighborhood: "Trieste", reports: 20, mainStrength: "Manutenzione" },
-        { neighborhood: "Garbatella", reports: 23, mainStrength: "Pulizia" }
+        { neighborhood: "EUR", reports: 8, mainStrength: "Pulizia" },
+        { neighborhood: "Flaminio", reports: 12, mainStrength: "Verde pubblico" },
+        { neighborhood: "Monteverde", reports: 15, mainStrength: "Manutenzione" },
+        { neighborhood: "Trieste", reports: 18, mainStrength: "Verde pubblico" },
+        { neighborhood: "Garbatella", reports: 21, mainStrength: "Comunità attiva" }
     ]
 };
 
-// Aggiungi i dati per le heatmap
+// Dati per le heatmap - completamente diversi tra rifiuti e buche
 window.heatmapData = {
     waste: {
         max: 10,
         data: [
-            // Campo de' fiori (CAM001)
-            {lat: 41.8956, lng: 12.4722, count: 9},
+            // Cluster principale nel Centro Storico
+            {lat: 41.8956, lng: 12.4722, count: 9}, // Campo de' Fiori
             {lat: 41.8958, lng: 12.4724, count: 8},
-            {lat: 41.8954, lng: 12.4720, count: 7},
-
-            // Via Frattina (CAM002)
-            {lat: 41.9045, lng: 12.4800, count: 8},
-            {lat: 41.9047, lng: 12.4802, count: 7},
-            {lat: 41.9043, lng: 12.4798, count: 6},
-
-            // Via del Corso (CAM003)
-            {lat: 41.9023, lng: 12.4800, count: 9},
-            {lat: 41.9025, lng: 12.4802, count: 8},
-            {lat: 41.9021, lng: 12.4798, count: 7},
-
-            // Piazza di Spagna (CAM004)
-            {lat: 41.9058, lng: 12.4823, count: 7},
-            {lat: 41.9060, lng: 12.4825, count: 6},
-            {lat: 41.9056, lng: 12.4821, count: 5},
-
-            // Trastevere - Piazza Santa Maria (CAM011)
-            {lat: 41.8892, lng: 12.4694, count: 8},
+            {lat: 41.8954, lng: 12.4720, count: 9},
+            {lat: 41.8952, lng: 12.4718, count: 8},
+            
+            // Cluster Trastevere
+            {lat: 41.8892, lng: 12.4694, count: 8}, // Piazza Santa Maria
             {lat: 41.8894, lng: 12.4696, count: 7},
-            {lat: 41.8890, lng: 12.4692, count: 6},
+            {lat: 41.8890, lng: 12.4692, count: 8},
+            {lat: 41.8895, lng: 12.4698, count: 7},
 
-            // Trastevere - Via della Lungaretta (CAM012)
-            {lat: 41.8895, lng: 12.4710, count: 7},
-            {lat: 41.8897, lng: 12.4712, count: 6},
-            {lat: 41.8893, lng: 12.4708, count: 5}
+            // Zona Testaccio - problemi moderati
+            {lat: 41.8785, lng: 12.4747, count: 6},
+            {lat: 41.8787, lng: 12.4749, count: 5},
+            {lat: 41.8783, lng: 12.4745, count: 6},
+
+            // Piccoli cluster sparsi
+            {lat: 41.9023, lng: 12.4800, count: 4}, // Via del Corso
+            {lat: 41.9025, lng: 12.4802, count: 3},
+            {lat: 41.9058, lng: 12.4823, count: 3}, // Piazza di Spagna
+            {lat: 41.9060, lng: 12.4825, count: 2}
         ]
     },
     potholes: {
         max: 10,
         data: [
-            // Campo de' fiori (CAM001)
-            {lat: 41.8956, lng: 12.4722, count: 8},
-            {lat: 41.8958, lng: 12.4724, count: 7},
-            {lat: 41.8954, lng: 12.4720, count: 6},
+            // Cluster principale San Lorenzo
+            {lat: 41.9018, lng: 12.5150, count: 9},
+            {lat: 41.9020, lng: 12.5152, count: 9},
+            {lat: 41.9016, lng: 12.5148, count: 8},
+            {lat: 41.9022, lng: 12.5154, count: 8},
+            {lat: 41.9014, lng: 12.5146, count: 7},
 
-            // Via Frattina (CAM002)
-            {lat: 41.9045, lng: 12.4800, count: 7},
-            {lat: 41.9047, lng: 12.4802, count: 6},
-            {lat: 41.9043, lng: 12.4798, count: 5},
+            // Testaccio - problemi diffusi
+            {lat: 41.8785, lng: 12.4747, count: 7},
+            {lat: 41.8787, lng: 12.4749, count: 6},
+            {lat: 41.8783, lng: 12.4745, count: 7},
+            {lat: 41.8789, lng: 12.4751, count: 6},
 
-            // Via del Corso (CAM003)
-            {lat: 41.9023, lng: 12.4800, count: 8},
-            {lat: 41.9025, lng: 12.4802, count: 7},
-            {lat: 41.9021, lng: 12.4798, count: 6},
+            // Trastevere - problemi localizzati
+            {lat: 41.8892, lng: 12.4694, count: 5},
+            {lat: 41.8894, lng: 12.4696, count: 4},
+            {lat: 41.8890, lng: 12.4692, count: 5},
 
-            // Piazza di Spagna (CAM004)
-            {lat: 41.9058, lng: 12.4823, count: 6},
-            {lat: 41.9060, lng: 12.4825, count: 5},
-            {lat: 41.9056, lng: 12.4821, count: 4},
-
-            // Trastevere - Piazza Santa Maria (CAM011)
-            {lat: 41.8892, lng: 12.4694, count: 9},
-            {lat: 41.8894, lng: 12.4696, count: 8},
-            {lat: 41.8890, lng: 12.4692, count: 7},
-
-            // Trastevere - Via della Lungaretta (CAM012)
-            {lat: 41.8895, lng: 12.4710, count: 8},
-            {lat: 41.8897, lng: 12.4712, count: 7},
-            {lat: 41.8893, lng: 12.4708, count: 6}
+            // Centro Storico - problemi minori
+            {lat: 41.8956, lng: 12.4722, count: 3},
+            {lat: 41.8958, lng: 12.4724, count: 2},
+            {lat: 41.9023, lng: 12.4800, count: 2}
         ]
     }
 };
