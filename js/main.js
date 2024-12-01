@@ -39,7 +39,7 @@ function initializeChatbotHandlers() {
             input.onchange = (e) => {
                 const file = e.target.files[0];
                 if (file) {
-                    alert(`Selected file: ${file.name}`);
+                    alert(Selected file: ${file.name});
                     // Add upload logic here
                 }
             };
@@ -51,13 +51,13 @@ function initializeChatbotHandlers() {
 // Load section content
 function loadSection(sectionId) {
     const mainContent = document.getElementById('main-content');
-    
+
     // Clear previous content
     mainContent.innerHTML = '';
-    
+
     // Update active state in menu
     updateMenuActiveState(sectionId);
-    
+
     // Load appropriate section
     switch(sectionId) {
         case 'dashboard':
